@@ -5,6 +5,12 @@ class LoginPage extends StatefulWidget {
   createState() => _LoginPage();
 }
 
+final gradient = BoxDecoration(
+    gradient: LinearGradient(colors: [
+      Color(int.parse("ff004b99", radix: 16)),
+      Color(int.parse("ff7a60a1", radix: 16))
+    ], begin: Alignment.bottomCenter, end: Alignment.topCenter));
+
 class _LoginPage extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
@@ -54,6 +60,7 @@ class _LoginPage extends State<LoginPage> {
           },
           color: Color(int.parse("ff004b99", radix: 16)),
           child: Text('Log In', style: TextStyle(color: Colors.white)),
+
         ),
       ),
     );
@@ -68,8 +75,7 @@ class _LoginPage extends State<LoginPage> {
           children: <Widget>[
             SizedBox(height: 16.0),
             Text("Central Information System",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 20.0)),
+                textAlign: TextAlign.center, style: TextStyle(fontSize: 20.0)),
             SizedBox(height: 18.0),
             id,
             SizedBox(height: 10.0),
@@ -81,9 +87,9 @@ class _LoginPage extends State<LoginPage> {
       ),
     );
 
-    return Scaffold(
-      //backgroundColor: Colors.white,
-      body: Center(
+    return Container(
+      decoration: gradient,
+      child: Center(
         child: ListView(
           shrinkWrap: true,
           padding: EdgeInsets.only(left: 0.0, right: 0.0),
