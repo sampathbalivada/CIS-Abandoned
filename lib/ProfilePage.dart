@@ -7,6 +7,14 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePage extends State<ProfilePage> {
+  Map<String, String> data = {
+    'id': '17L31A05T8',
+    'phone': '9182163905',
+    'email': 'balivadask2000@gmail.com',
+    'dob': '21-02-2000',
+    'aadhar': '9033-2XX8-2XX7'
+  };
+
   @override
   Widget build(BuildContext context) {
     final picture = Hero(
@@ -17,7 +25,7 @@ class _ProfilePage extends State<ProfilePage> {
         child: CachedNetworkImage(
           //TODO - Insert user profile image URL here
           imageUrl:
-              'https://images.theconversation.com/files/93616/original/image-20150902-6700-t2axrz.jpg',
+              'https://propertymarketersllc.com/wp-content/uploads/2018/05/profile-picture-placeholder.png',
           //Placeholder profile image inserted - Google Logo
           placeholder: CircularProgressIndicator(),
         ),
@@ -30,16 +38,123 @@ class _ProfilePage extends State<ProfilePage> {
     );
 
     final details = Card(
-      elevation: 4.0,
-      margin: EdgeInsets.only(left: 10.0, right: 10.0),
-      child: ListView(
-        shrinkWrap: true,
-        padding: EdgeInsets.only(left: 18.0, right: 18.0),
-        children: <Widget>[
-          Text("text"),
-        ],
-      ),
-    );
+        elevation: 4.0,
+        margin: EdgeInsets.only(left: 10.0, right: 10.0),
+        child: Table(
+          defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+          defaultColumnWidth: IntrinsicColumnWidth(flex: 1.0),
+          border: TableBorder.all(),
+          children: [
+            TableRow(children: [
+              TableCell(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    new Text(
+                      'ID',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
+              ),
+              TableCell(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    new Text(
+                      data['id'].toString(),
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
+              ),
+            ]),
+            TableRow(children: [
+              TableCell(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    new Text(
+                      'E-Mail',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
+              ),
+              TableCell(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    new Text(
+                      data['email'].toString(),
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
+              )
+            ]),
+            TableRow(children: [
+              TableCell(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    new Text(
+                      'Mobile',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
+              ),
+              TableCell(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    new Text(
+                      data['phone'].toString(),
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
+              )
+            ]),
+            TableRow(children: [
+              TableCell(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    new Text('DOB', style: TextStyle(fontSize: 18),),
+                  ],
+                ),
+              ),
+              TableCell(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    new Text(data['dob'].toString(), style: TextStyle(fontSize: 18),),
+                  ],
+                ),
+              )
+            ]),
+            TableRow(children: [
+              TableCell(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    new Text('Aadhar No', style: TextStyle(fontSize: 18),),
+                  ],
+                ),
+              ),
+              TableCell(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    new Text(data['aadhar'].toString(), style: TextStyle(fontSize: 18),),
+                  ],
+                ),
+              )
+            ]),
+          ],
+        ));
 
     final navigationDrawer = Drawer(
       child: ListView(
@@ -52,7 +167,7 @@ class _ProfilePage extends State<ProfilePage> {
                 child: CachedNetworkImage(
                   //TODO - Insert user profile image URL here
                   imageUrl:
-                      'https://images.theconversation.com/files/93616/original/image-20150902-6700-t2axrz.jpg',
+                      'https://propertymarketersllc.com/wp-content/uploads/2018/05/profile-picture-placeholder.png',
                   //Placeholder profile image inserted - Google Logo
                   placeholder: CircularProgressIndicator(),
                 ),
